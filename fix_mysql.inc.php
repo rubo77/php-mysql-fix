@@ -1,3 +1,4 @@
+<?php
 /**
  * replacement for all mysql functions
  */
