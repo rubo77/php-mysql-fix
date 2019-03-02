@@ -7,6 +7,15 @@ will be more vulnerable than if you use the recommended newer mysqli-functions i
 So only If you are sure that this is not setting your server at risk, you can fix your old
 code by adding this line at the beginning of your old code:
 
+### usage
+
+Download and include the file in the top of your PHP script:
+
+    <?php
+    include_once('fix_mysql.inc.php');
+
+### discussion
+
 see: https://stackoverflow.com/a/37877644/1069083
 
-If you have any questions open an issue there or enhancements as Pull Request
+If you have any questions open an issue here or enhancements as Pull Request
