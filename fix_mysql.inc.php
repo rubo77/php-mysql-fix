@@ -4,8 +4,8 @@
 *
 * @version 2
 * @git https://github.com/rubo77/php-mysql-fix
-* 
-* Be aware, that this is just a workaround to fix-up some old code and the resulting project 
+*
+* Be aware, that this is just a workaround to fix-up some old code and the resulting project
 * will be more vulnerable than if you use the recommended newer mysqli-functions instead.
 * So only If you are sure that this is not setting your server at risk, you can fix your old
 * code by adding this line at the beginning of your old code:
@@ -26,19 +26,23 @@ if (!function_exists("mysql_connect")){
   define("MYSQL_BOTH", MYSQLI_BOTH);
 
   function mysql_fetch_array($result, $result_type = MYSQL_BOTH){
-    return mysqli_fetch_array($result, $result_type);
+    $row = mysqli_fetch_array($result, $result_type);
+    return is_null($row) ? false : $row;
   }
 
   function mysql_fetch_assoc($result){
-    return mysqli_fetch_assoc($result);
+    $row = mysqli_fetch_assoc($result);
+    return is_null($row) ? false : $row;
   }
 
   function mysql_fetch_row($result) {
-    return mysqli_fetch_row($result);
+    $row = mysqli_fetch_row($result);
+    return is_null($row) ? false : $row;
   }
 
   function mysql_fetch_object($result) {
-    return mysqli_fetch_object($result);
+    $row = mysqli_fetch_object($result);
+    return is_null($row) ? false : $row;
   }
 
   function mysql_connect($host, $username, $password, $new_link = FALSE, $client_flags = 0){
@@ -140,8 +144,8 @@ if (!function_exists("mysql_connect")){
     return mysqli_data_seek($result, $row_number);
   }
 
-  function mysql_result($result, $row=0, $col=0){ 
-    $numrows = mysqli_num_rows($result); 
+  function mysql_result($result, $row=0, $col=0){
+    $numrows = mysqli_num_rows($result);
     if($numrows && $row <= ($numrows-1) && $row >= 0){
       mysqli_data_seek($result, $row);
       $resultrow = (is_numeric($col)) ? mysqli_fetch_row($result) : mysqli_fetch_assoc($result);
