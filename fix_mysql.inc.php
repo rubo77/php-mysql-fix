@@ -2,7 +2,7 @@
 /**
 * replacement for all mysql functions
 *
-* @version 2
+* @version 3
 * @git https://github.com/rubo77/php-mysql-fix
 *
 * Be aware, that this is just a workaround to fix-up some old code and the resulting project
