@@ -80,7 +80,16 @@ if (!function_exists("mysql_connect")){
     }
     return mysqli_query($link_identifier, $stmt);
   }
-
+  
+  function mysql_db_query ($database,  $query, $link_identifier = NULL){
+    global $global_link_identifier;
+    if($link_identifier == null) {
+      $link_identifier = $global_link_identifier;
+    }
+    mysqli_select_db($link_identifier, $database);
+    return mysqli_query($link_identifier, $query);
+  }
+  
   function mysql_num_rows($result){
     return mysqli_num_rows($result);
   }
