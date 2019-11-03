@@ -215,4 +215,28 @@ if (!function_exists("mysql_connect")){
   function mysql_numfields(...$args){ return mysql_num_fields(...$args); }
   function mysql_numrows(...$args){ return mysql_num_rows(...$args); }
   function mysql_selectdb(...$args){ return mysql_select_db(...$args); }
+  
+  // TODO: those functions are not defined yet:
+  function mysql_client_encoding(){ trigger_error("mysql_client_encoding is not defined yet", E_USER_ERROR); }
+  function mysql_create_db(){ trigger_error("mysql_create_db is not defined yet", E_USER_ERROR); }
+  function mysql_drop_db(){ trigger_error("mysql_drop_db is not defined yet", E_USER_ERROR); }
+  function mysql_fetch_field(){ trigger_error("mysql_fetch_field is not defined yet", E_USER_ERROR); }
+  function mysql_fetch_lengths(){ trigger_error("mysql_fetch_lengths is not defined yet", E_USER_ERROR); }
+  function mysql_field_flags(){ trigger_error("mysql_field_flags is not defined yet", E_USER_ERROR); }
+  function mysql_field_len(){ trigger_error("mysql_field_len is not defined yet", E_USER_ERROR); }
+  function mysql_field_seek(){ trigger_error("mysql_field_seek is not defined yet", E_USER_ERROR); }
+  function mysql_field_table(){ trigger_error("mysql_field_table is not defined yet", E_USER_ERROR); }
+  function mysql_field_type(){ trigger_error("mysql_field_type is not defined yet", E_USER_ERROR); }
+  function mysql_get_client_info(){ trigger_error("mysql_get_client_info is not defined yet", E_USER_ERROR); }
+  function mysql_get_host_info(){ trigger_error("mysql_get_host_info is not defined yet", E_USER_ERROR); }
+  function mysql_get_proto_info(){ trigger_error("mysql_get_proto_info is not defined yet", E_USER_ERROR); }
+  function mysql_info(){ trigger_error("mysql_info is not defined yet", E_USER_ERROR); }
+  function mysql_list_dbs(){ trigger_error("mysql_list_dbs is not defined yet", E_USER_ERROR); }
+  function mysql_list_fields(){ trigger_error("mysql_list_fields is not defined yet", E_USER_ERROR); }
+  function mysql_list_processes(){ trigger_error("mysql_list_processes is not defined yet", E_USER_ERROR); }
+  function mysql_num_fields(){ trigger_error("mysql_num_fields is not defined yet", E_USER_ERROR); }
+  function mysql_tablename(){ trigger_error("mysql_tablename is not defined yet", E_USER_ERROR); }
+  function mysql_stat(){ trigger_error("mysql_stat is not defined yet", E_USER_ERROR); }
+  function mysql_thread_id(){ trigger_error("mysql_thread_id is not defined yet", E_USER_ERROR); }
+  function mysql_unbuffered_query(){ trigger_error("mysql_unbuffered_query is not defined yet", E_USER_ERROR); }
 }
