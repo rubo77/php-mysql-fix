@@ -81,7 +81,7 @@ if (!function_exists("mysql_connect")){
     return mysqli_query($link_identifier, $stmt);
   }
   
-  function mysql_db_query ($database,  $query, $link_identifier = NULL){
+  function mysql_db_query ($database, $query, $link_identifier = NULL){
     global $global_link_identifier;
     if($link_identifier == null) {
       $link_identifier = $global_link_identifier;
@@ -196,4 +196,23 @@ if (!function_exists("mysql_connect")){
     }
     return mysqli_set_charset($link_identifier, $csname);
   }
+  
+  // aliases 
+  function mysql(...$args){ return mysql_db_query(...$args); }
+  function mysql_createdb(...$args){ return mysql_create_db(...$args); }
+  function mysql_db_name(...$args){ return mysql_result(...$args); }
+  function mysql_dbname(...$args){ return mysql_result(...$args); }
+  function mysql_dropdb(...$args){ return mysql_drop_db(...$args); }
+  function mysql_fieldflags(...$args){ return mysql_field_flags(...$args); }
+  function mysql_fieldlen(...$args){ return mysql_field_len(...$args); }
+  function mysql_fieldname(...$args){ return mysql_field_name(...$args); }
+  function mysql_fieldtable(...$args){ return mysql_field_table(...$args); }
+  function mysql_fieldtype(...$args){ return mysql_field_type(...$args); }
+  function mysql_freeresult(...$args){ return mysql_free_result(...$args); }
+  function mysql_listdbs(...$args){ return mysql_list_dbs(...$args); }
+  function mysql_listfields(...$args){ return mysql_list_fields(...$args); }
+  function mysql_listtables(...$args){ return mysql_list_tables(...$args); }
+  function mysql_numfields(...$args){ return mysql_num_fields(...$args); }
+  function mysql_numrows(...$args){ return mysql_num_rows(...$args); }
+  function mysql_selectdb(...$args){ return mysql_select_db(...$args); }
 }
