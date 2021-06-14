@@ -1,0 +1,11 @@
+{
+    "name": "frugan-it/php-mysql-fix",
+    "description" : "A replacement for all mysql functions with mysqli equivalents.",
+    "license": "MIT",
+    "config" : {
+        "platform": {
+            "php": "7.4"
+        },
+        "sort-packages": true
+    }
+}
