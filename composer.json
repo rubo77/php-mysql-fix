@@ -4,7 +4,7 @@
     "license": "MIT",
     "config" : {
         "platform": {
-            "php": "7.4"
+            "php": "7.0"
         },
         "sort-packages": true
     }
