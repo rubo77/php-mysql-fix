@@ -173,6 +173,13 @@ if (!function_exists("mysql_connect")){
     return mysqli_real_escape_string($link_identifier, $s);
   }
 
+  function mysql_fetch_field($result, $i = null) {
+  	if ($i == null) {
+	  	return mysqli_fetch_field($result);
+	  }
+    return mysqli_fetch_field_direct($result, $i);
+  }
+
   function mysql_field_name($result, $i) {
     return mysqli_fetch_field_direct($result, $i)->name;
   }
