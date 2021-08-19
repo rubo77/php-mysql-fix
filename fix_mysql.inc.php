@@ -173,6 +173,13 @@ if (!function_exists("mysql_connect")){
     return mysqli_real_escape_string($link_identifier, $s);
   }
 
+  function mysql_fetch_field($result, $i = null) {
+    if ($i === null) {
+      return mysqli_fetch_field($result);
+    }
+    return mysqli_fetch_field_direct($result, $i);
+  }
+
   function mysql_field_name($result, $i) {
     return mysqli_fetch_field_direct($result, $i)->name;
   }
@@ -232,7 +239,6 @@ if (!function_exists("mysql_connect")){
   function mysql_client_encoding(){ trigger_error("mysql_client_encoding is not defined yet", E_USER_ERROR); }
   function mysql_create_db(){ trigger_error("mysql_create_db is not defined yet", E_USER_ERROR); }
   function mysql_drop_db(){ trigger_error("mysql_drop_db is not defined yet", E_USER_ERROR); }
-  function mysql_fetch_field(){ trigger_error("mysql_fetch_field is not defined yet", E_USER_ERROR); }
   function mysql_fetch_lengths(){ trigger_error("mysql_fetch_lengths is not defined yet", E_USER_ERROR); }
   function mysql_field_flags(){ trigger_error("mysql_field_flags is not defined yet", E_USER_ERROR); }
   function mysql_field_seek(){ trigger_error("mysql_field_seek is not defined yet", E_USER_ERROR); }
