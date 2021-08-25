@@ -174,7 +174,7 @@ if (!function_exists("mysql_connect")){
   }
 
   function mysql_fetch_field($result, $i = null) {
-  	if ($i == null) {
+  	if ($i === null) {
 	  	return mysqli_fetch_field($result);
 	  }
     return mysqli_fetch_field_direct($result, $i);
