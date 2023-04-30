@@ -188,7 +188,7 @@ if (!function_exists("mysql_connect")){
     return mysqli_fetch_field_direct($result, $i)->type;
   }
 
-  function mysql_field_len(){
+  function mysql_field_len($result, $i){
     return mysqli_fetch_field_direct($result, $i)->length;
   }
   
