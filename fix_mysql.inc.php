@@ -91,7 +91,7 @@ if (!function_exists("mysql_connect")){
   }
   
   function mysql_num_rows($result){
-    return mysqli_num_rows($result);
+    return is_bool($result) ? 0 : mysqli_num_rows($result);
   }
 
   function mysql_affected_rows($link_identifier = NULL){
@@ -197,7 +197,7 @@ if (!function_exists("mysql_connect")){
   }
 
   function mysql_free_result($result) {
-    return mysqli_free_result($result);
+    return is_bool($result) ? true : mysqli_free_result($result);
   }
 
   function mysql_get_server_info($link_identifier = null){
