@@ -2,7 +2,10 @@
 /**
 * replacement for all mysql functions
 *
-* @version 3
+* @version 4
+* @works with PHP 8.2
+* @license unlicense
+*
 * @git https://github.com/rubo77/php-mysql-fix
 *
 * Be aware, that this is just a workaround to fix-up some old code and the resulting project
