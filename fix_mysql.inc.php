@@ -31,16 +31,25 @@ if (!function_exists("mysql_connect")){
   }
 
   function mysql_fetch_assoc($result){
+    if(is_bool($result)){
+      return false;
+    }
     $row = mysqli_fetch_assoc($result);
     return is_null($row) ? false : $row;
   }
 
   function mysql_fetch_row($result) {
+    if(is_bool($result)){
+      return false;
+    }
     $row = mysqli_fetch_row($result);
     return is_null($row) ? false : $row;
   }
 
   function mysql_fetch_object($result) {
+    if(is_bool($result)){
+      return false;
+    }
     $row = mysqli_fetch_object($result);
     return is_null($row) ? false : $row;
   }
