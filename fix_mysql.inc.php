@@ -2,7 +2,10 @@
 /**
 * replacement for all mysql functions
 *
-* @version 3
+* @version 4
+* @works with PHP 8.2
+* @license unlicense
+*
 * @git https://github.com/rubo77/php-mysql-fix
 *
 * Be aware, that this is just a workaround to fix-up some old code and the resulting project
@@ -31,16 +34,25 @@ if (!function_exists("mysql_connect")){
   }
 
   function mysql_fetch_assoc($result){
+    if(is_bool($result)){
+      return false;
+    }
     $row = mysqli_fetch_assoc($result);
     return is_null($row) ? false : $row;
   }
 
   function mysql_fetch_row($result) {
+    if(is_bool($result)){
+      return false;
+    }
     $row = mysqli_fetch_row($result);
     return is_null($row) ? false : $row;
   }
 
   function mysql_fetch_object($result) {
+    if(is_bool($result)){
+      return false;
+    }
     $row = mysqli_fetch_object($result);
     return is_null($row) ? false : $row;
   }
@@ -91,7 +103,7 @@ if (!function_exists("mysql_connect")){
   }
   
   function mysql_num_rows($result){
-    return mysqli_num_rows($result);
+    return is_bool($result) ? 0 : mysqli_num_rows($result);
   }
 
   function mysql_affected_rows($link_identifier = NULL){
@@ -173,6 +185,13 @@ if (!function_exists("mysql_connect")){
     return mysqli_real_escape_string($link_identifier, $s);
   }
 
+  function mysql_fetch_field($result, $i = null) {
+    if ($i === null) {
+      return mysqli_fetch_field($result);
+    }
+    return mysqli_fetch_field_direct($result, $i);
+  }
+
   function mysql_field_name($result, $i) {
     return mysqli_fetch_field_direct($result, $i)->name;
   }
@@ -181,7 +200,7 @@ if (!function_exists("mysql_connect")){
     return mysqli_fetch_field_direct($result, $i)->type;
   }
 
-  function mysql_field_len(){
+  function mysql_field_len($result, $i){
     return mysqli_fetch_field_direct($result, $i)->length;
   }
   
@@ -190,7 +209,7 @@ if (!function_exists("mysql_connect")){
   }
 
   function mysql_free_result($result) {
-    return mysqli_free_result($result);
+    return is_bool($result) ? true : mysqli_free_result($result);
   }
 
   function mysql_get_server_info($link_identifier = null){
@@ -232,7 +251,6 @@ if (!function_exists("mysql_connect")){
   function mysql_client_encoding(){ trigger_error("mysql_client_encoding is not defined yet", E_USER_ERROR); }
   function mysql_create_db(){ trigger_error("mysql_create_db is not defined yet", E_USER_ERROR); }
   function mysql_drop_db(){ trigger_error("mysql_drop_db is not defined yet", E_USER_ERROR); }
-  function mysql_fetch_field(){ trigger_error("mysql_fetch_field is not defined yet", E_USER_ERROR); }
   function mysql_fetch_lengths(){ trigger_error("mysql_fetch_lengths is not defined yet", E_USER_ERROR); }
   function mysql_field_flags(){ trigger_error("mysql_field_flags is not defined yet", E_USER_ERROR); }
   function mysql_field_seek(){ trigger_error("mysql_field_seek is not defined yet", E_USER_ERROR); }

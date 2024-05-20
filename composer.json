@@ -1,5 +1,5 @@
 {
-    "name": "frugan-it/php-mysql-fix",
+    "name": "rubo77/php-mysql-fix",
     "description" : "A replacement for all mysql functions with mysqli equivalents.",
     "license": "MIT",
     "config" : {
