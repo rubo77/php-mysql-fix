@@ -1,0 +1,16 @@
+{
+    "name": "rubo77/php-mysql-fix",
+    "description" : "A replacement for all mysql functions with mysqli equivalents.",
+    "license": "MIT",
+    "config" : {
+        "platform": {
+            "php": "7.0"
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "files": [
+            "fix_mysql.inc.php"
+        ]
+    }
+}
