@@ -9,20 +9,19 @@ code by adding this replacement.
 
 ### usage
 
-You can install it via Composer by typing:
-
-```sh
-$ composer require rubo77/php-mysql-fix:dev-master
-```
-
-and remembering to also add the `files` section as indicated below:
+You can install it via Composer adding this to your `composer.json`:
 
 ```json
 {
     "name": "<vendor>/<project>",
-    "minimum-stability": "dev",
+    "repositories" : [
+        {
+            "type": "vcs",
+            "url": "https://github.com/rubo77/php-mysql-fix"
+        }
+    ],
     "require": {
-        "rubo77/php-mysql-fix": "dev-master"
+        "rubo77/php-mysql-fix": "^1.0"
     },
     "autoload": {
         "files": [
@@ -30,6 +29,13 @@ and remembering to also add the `files` section as indicated below:
         ]
     }
 }
+
+```
+
+and then typing:
+
+```sh
+$ composer update
 ```
 
 Alternatively you can manually download and include the file at the top of your PHP script:
