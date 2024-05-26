@@ -21,7 +21,7 @@ You can install it via Composer adding this to your `composer.json`:
         }
     ],
     "require": {
-        "rubo77/php-mysql-fix": "^1.0"
+        "rubo77/php-mysql-fix": "^4.0"
     },
     "autoload": {
         "files": [
