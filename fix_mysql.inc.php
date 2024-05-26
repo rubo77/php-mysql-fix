@@ -2,7 +2,7 @@
 /**
 * replacement for all mysql functions
 *
-* @version 4
+* @version 4.0.0
 * @works with PHP 8.2
 * @license unlicense
 *
