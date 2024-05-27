@@ -13,13 +13,6 @@ You can install it via Composer adding this to your `composer.json`:
 
 ```json
 {
-    "name": "<vendor>/<project>",
-    "repositories" : [
-        {
-            "type": "vcs",
-            "url": "https://github.com/rubo77/php-mysql-fix"
-        }
-    ],
     "require": {
         "rubo77/php-mysql-fix": "^4.0"
     },
